@@ -39,5 +39,5 @@ coding!
 
    ...
 - Isabel Klint #n: [GitHub](https://github.com/isabelklint) / [LinkedIn](https://linkedin.com/in/isabel-klint)
-
+- Corinna Bolon #n: [GitHub](https://github.com/corinnabolon) / [LinkedIn](https://www.linkedin.com/in/corinna-bolon-690003297/)
 - Ja'Mesa Dixon #7: [GitHub](https://github.com/MeMeD10) / [LinkedIn](https://linkedin.com/in/JaMesa-Dixon)
