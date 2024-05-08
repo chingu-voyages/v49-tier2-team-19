@@ -40,4 +40,4 @@ coding!
    ...
 - Isabel Klint #n: [GitHub](https://github.com/isabelklint) / [LinkedIn](https://linkedin.com/in/isabel-klint)
 
-- Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Ja'Mesa Dixon #7: [GitHub](https://github.com/MeMeD10) / [LinkedIn](https://linkedin.com/in/JaMesa-Dixon)
