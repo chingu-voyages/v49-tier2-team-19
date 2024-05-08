@@ -36,8 +36,7 @@ coding!
 
 - Teammate name #1: [GitHub](https://github.com/lnovitz) / [LinkedIn](https://linkedin.com/in/liannanovitz)
 - Teammate name #2: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-
-   ...
-- Isabel Klint #n: [GitHub](https://github.com/isabelklint) / [LinkedIn](https://linkedin.com/in/isabel-klint)
-- Corinna Bolon #n: [GitHub](https://github.com/corinnabolon) / [LinkedIn](https://www.linkedin.com/in/corinna-bolon-690003297/)
+- Isabel Klint #3: [GitHub](https://github.com/isabelklint) / [LinkedIn](https://linkedin.com/in/isabel-klint)
+- Corinna Bolon #4: [GitHub](https://github.com/corinnabolon) / [LinkedIn](https://www.linkedin.com/in/corinna-bolon-690003297/)
+- Deepali Sangole #5: [GitHub](https://github.com/ss-deep) / [LinkedIn](https://www.linkedin.com/in/deepali-sangole-49b0841b/)
 - Ja'Mesa Dixon #7: [GitHub](https://github.com/MeMeD10) / [LinkedIn](https://linkedin.com/in/JaMesa-Dixon)
