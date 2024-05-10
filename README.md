@@ -40,3 +40,4 @@ coding!
 - Corinna Bolon #4: [GitHub](https://github.com/corinnabolon) / [LinkedIn](https://www.linkedin.com/in/corinna-bolon-690003297/)
 - Deepali Sangole #5: [GitHub](https://github.com/ss-deep) / [LinkedIn](https://www.linkedin.com/in/deepali-sangole-49b0841b/)
 - Ja'Mesa Dixon #7: [GitHub](https://github.com/MeMeD10) / [LinkedIn](https://linkedin.com/in/JaMesa-Dixon)
+- Hector Garcia #8: [GitHub](https://github.com/hectorgarcia07) / [LinkedIn](https://www.linkedin.com/in/hectorgarcia01/)
