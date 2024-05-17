@@ -1,0 +1,27 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Vite build output
+dist/
+
+# IDE and editor settings
+.vscode/
+!.vscode/extensions.json
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# Ignore other potential build artifacts
+build/
+tmp/
