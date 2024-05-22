@@ -34,10 +34,11 @@ Everyone on your team should add their name along with a link to their GitHub
 your repo access and to practice PR'ing with your team *before* you start
 coding!
 
-- Lianna Novitz #1: [GitHub](https://github.com/lnovitz) / [LinkedIn](https://linkedin.com/in/liannanovitz)
-- Teammate name #2: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-- Isabel Klint #3: [GitHub](https://github.com/isabelklint) / [LinkedIn](https://linkedin.com/in/isabel-klint)
-- Corinna Bolon #4: [GitHub](https://github.com/corinnabolon) / [LinkedIn](https://www.linkedin.com/in/corinna-bolon-690003297/)
-- Deepali Sangole #5: [GitHub](https://github.com/ss-deep) / [LinkedIn](https://www.linkedin.com/in/deepali-sangole-49b0841b/)
-- Ja'Mesa Dixon #7: [GitHub](https://github.com/MeMeD10) / [LinkedIn](https://linkedin.com/in/JaMesa-Dixon)
-- Hector Garcia #8: [GitHub](https://github.com/hectorgarcia07) / [LinkedIn](https://www.linkedin.com/in/hectorgarcia01/)
+- Lianna Novitz #1: [GitHub](https://github.com/lnovitz) / [LinkedIn](https://linkedin.com/in/liannanovitz) 
+- Isabel Klint #2: [GitHub](https://github.com/isabelklint) / [LinkedIn](https://linkedin.com/in/isabel-klint)
+- Corinna Bolon #3: [GitHub](https://github.com/corinnabolon) / [LinkedIn](https://www.linkedin.com/in/corinna-bolon-690003297/)
+- Deepali Sangole #4: [GitHub](https://github.com/ss-deep) / [LinkedIn](https://www.linkedin.com/in/deepali-sangole-49b0841b/)
+- Ja'Mesa Dixon #5: [GitHub](https://github.com/MeMeD10) / [LinkedIn](https://linkedin.com/in/JaMesa-Dixon)
+- Hector Garcia #6: [GitHub](https://github.com/hectorgarcia07) / [LinkedIn](https://www.linkedin.com/in/hectorgarcia01/)
+
+- Email list:  csharp12321@gmail.com; liannanovitz@gmail.com; deepalisangole@gmail.com; kyndrill@gmail.com; isabel.klint@gmail.com
