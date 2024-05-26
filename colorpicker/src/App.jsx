@@ -6,6 +6,9 @@ import "./App.css";
 import React from 'react';
 import TextForm from './TextForm';
 
+// i could put default values here
+// i could have a custom submit handler here
+// and pass these to textform and that would be 'props'
 // 'function components in react define ui elements'
 export default function App() {
   return (

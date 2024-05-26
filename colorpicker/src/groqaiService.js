@@ -2,6 +2,7 @@ import { Groq } from "groq-sdk";
 
 // initialize the Groq instance
 const groq = new Groq({
+  // key in .env it's free so who cares if we expose it
   apiKey: import.meta.env.VITE_GROQ_API_KEY,
   dangerouslyAllowBrowser: true
 });
