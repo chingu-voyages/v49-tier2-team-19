@@ -4,6 +4,3 @@
 
 [build.environment]
   NODE_VERSION = "18"         # Adjust the Node.js version if necessary
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"  # Example plugin, adjust as needed
