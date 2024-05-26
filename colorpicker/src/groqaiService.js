@@ -8,7 +8,7 @@ const groq = new Groq({
 
 // Function to get color recommendations
 export const getColors = async (hexCode, text) => {
-  const adjectives = ['contrasting', 'similar', 'complementary', 'analogous', 'pentadic'];
+  const adjectives = ['contrasting pleasantly', 'similar', 'complementary', 'analogous', 'pentradic'];
   try {
     // Initialize an empty string to store the recommendations
     let recommendations = "";
@@ -16,7 +16,7 @@ export const getColors = async (hexCode, text) => {
     // Loop through the adjectives
     for (const adj of adjectives) {
       const messages = [
-        { role: 'system', content: 'You are a creative assistant, you restate the hex and phrase only, then list 5 hexcodes you recommend only.' },
+        { role: 'system', content: 'You are a fashionable and creative assistant.' },
         { role: 'user', content: `Given the hex code "${hexCode}" and the phrase "${text}", recommend a ${adj} color.` }
       ];
 

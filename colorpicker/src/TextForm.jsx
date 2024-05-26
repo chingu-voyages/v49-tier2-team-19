@@ -1,46 +1,32 @@
 import React, { useState } from 'react';
 import { getColors } from './groqaiService';
 
-// A UI element created here
 export default function TextForm() {
-  // Define default state values
   const defaultHex = 'DD5537';
   const defaultPrompt = 'my livingroom couch';
-  
-  // Define state to store the response from the API
-  const [response, setResponse] = useState('');
 
-  // useState hook creates state variables and setter functions
+  const [response, setResponse] = useState('');
   const [hexText, setHexText] = useState(defaultHex);
   const [describeText, setDescribeText] = useState(defaultPrompt);
 
-  // submit handling
   const handleSubmit = async () => {
     try {
-      // Call getColors function with hexText and describeText
       const colorsResponse = await getColors(hexText, describeText);
-      if (colorsResponse) {
-        // Update state with the response
-        setResponse(colorsResponse); 
-      } else {
-        // Handle case where colorsResponse is undefined
-        console.error("Error: Empty response received from getColors");
-      }
+      // Set the response directly as it's a string
+      setResponse(colorsResponse);
     } catch (error) {
-      // Handle any errors
       console.error("Error while fetching colors:", error.message);
+      // Reset response if there's an error
+      setResponse('');
     }
   };
-  
-  
-  // Render the form
+
   return (
     <div>
       <label>
         Hex code:
         <input
           value={hexText}
-          id="hexText"
           onChange={e => setHexText(e.target.value)}
           type="text"
         />
@@ -50,7 +36,6 @@ export default function TextForm() {
         Description:
         <input
           value={describeText}
-          id="describeText"
           onChange={e => setDescribeText(e.target.value)}
           type="text"
         />
@@ -60,9 +45,8 @@ export default function TextForm() {
         Submit
       </button>
       <br />
-      {/* Display the response in a text box */}
+      {/* Display the response in a text area */}
       <textarea
-        backgroundcolor="red"
         value={response}
         rows={5}
         cols={50}
