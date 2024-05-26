@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"   # Change this to your build command if it's different
+  command = "vite build"   # Change this to your build command if it's different
   publish = "dist"            # Change this to your build output directory
 
 [build.environment]
