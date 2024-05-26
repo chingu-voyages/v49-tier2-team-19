@@ -11,11 +11,10 @@ export default function App() {
   return (
     <>
     <h1 className="text-3xl font-bold underline">
-      Hello world!
+      Colormee!
       </h1>
-      <div>Isabel's attempt</div>
-      <div>See console for output.</div>
-      {/* TextForm creates my input boxes*/}
+      <div>For color recommendations, input a hex code you like and tell me what you need colors for.</div>
+      {/* TextForm creates my input boxes and shows output in a textarea*/}
       <TextForm />
     </>
   );

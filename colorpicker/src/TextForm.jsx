@@ -24,7 +24,7 @@ export default function TextForm() {
   return (
     <div>
       <label>
-        Hex code:
+        Hex code:&nbsp;
         <input
           value={hexText}
           onChange={e => setHexText(e.target.value)}
@@ -33,7 +33,7 @@ export default function TextForm() {
       </label>
       <br />
       <label>
-        Description:
+        Description:&nbsp; 
         <input
           value={describeText}
           onChange={e => setDescribeText(e.target.value)}
