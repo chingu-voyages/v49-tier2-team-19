@@ -1,40 +1,41 @@
 import { Groq } from "groq-sdk";
 
-// Initialize the Groq instance
+// initialize the Groq instance
 const groq = new Groq({
   apiKey: import.meta.env.VITE_GROQ_API_KEY,
   dangerouslyAllowBrowser: true
 });
 
-// Function to get color recommendations
+// this function gets color recommendations
 export const getColors = async (hexCode, text) => {
   const adjectives = ['contrasting pleasantly', 'similar', 'complementary', 'analogous', 'pentradic'];
   try {
-    // Initialize an empty string to store the recommendations
+    // initialize empty string to store recommendations
     let recommendations = "";
 
-    // Loop through the adjectives
+    // loop through the adjectives: is there a better way to get these?
+    // maybe we don't need 25 recommendations (5 adjectives, 5 colors)
     for (const adj of adjectives) {
       const messages = [
         { role: 'system', content: 'You are a fashionable and creative assistant.' },
         { role: 'user', content: `Given the hex code "${hexCode}" and the phrase "${text}", recommend a ${adj} color.` }
       ];
 
-      // Fetch the recommendations from the API
+      // fetch recommendations from grok ai API
       const response = await groq.chat.completions.create({ messages, model: "llama3-8b-8192" });
       const choice = response.choices[0];
       const recommendedColor = choice.message.content.trim();
 
-      // Append the recommendation to the string
+      // append recommendation to string
       recommendations += `${adj}: ${recommendedColor}\n`;
     }
 
-    // Return the recommendations string
+    // return  recommendations string
     return recommendations;
   } catch (error) {
-    // Handle any errors
+    // error handling
     console.error("Error generating recommended colors:", error.message);
-    // Return an empty string or handle the error as needed
+    // return an empty string ⋀ handle the error as needed
     return "";
   }
 };

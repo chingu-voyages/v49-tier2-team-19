@@ -12,11 +12,11 @@ export default function TextForm() {
   const handleSubmit = async () => {
     try {
       const colorsResponse = await getColors(hexText, describeText);
-      // Set the response directly as it's a string
+      // set the response directly (string)
       setResponse(colorsResponse);
     } catch (error) {
       console.error("Error while fetching colors:", error.message);
-      // Reset response if there's an error
+      // reset response for error
       setResponse('');
     }
   };
@@ -45,7 +45,7 @@ export default function TextForm() {
         Submit
       </button>
       <br />
-      {/* Display the response in a text area */}
+      {/* display the response in a text area */}
       <textarea
         value={response}
         rows={5}
