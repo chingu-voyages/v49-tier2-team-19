@@ -1,3 +1,6 @@
+// https://serpapi.com/blog/create-super-fast-ai-assistant-with-groq/
+// https://www.youtube.com/watch?v=hw_J53MZT4o
+
 import './index.css'; // added by isabel may 25 24
 import "./App.css";
 import React from 'react';
