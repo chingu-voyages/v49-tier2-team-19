@@ -1,7 +1,7 @@
 // src/main.jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
+import App from './components/App';
 
 // Remove dotenv import and configuration
 // import dotenv from 'dotenv';
