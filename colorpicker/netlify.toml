@@ -1,0 +1,6 @@
+[build]
+  command = "vite build"   # Change this to your build command if it's different
+  publish = "dist"            # Change this to your build output directory
+
+[build.environment]
+  NODE_VERSION = "18"         # Adjust the Node.js version if necessary
