@@ -21,6 +21,10 @@ Open your terminal and navigate to your local copy of the git repository. If you
 
 Once the folder is cloned, follow the rest of the instructions below.
 
+- Copy the `.env.template` file to a new file that's just named `.env` in the `colorpicker` folder. 
+
+- Add the `VITE_GROQ_API_KEY=123` to `colorpicker/.env` (ask teammates for the API key)
+
 Navigate to the colorpicker folder.
 ```
 cd colorpicker
