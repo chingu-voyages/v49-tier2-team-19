@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { grocai } from "../Groqai";
+import { grocai } from "./Groqai";
 // textform is not taking any props from App, props
 // are data from parent to child component
 // but we should have that maybe? idk

@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState } from 'react';
-import Palette from "./Palette";
+import Palette from "./components/Palette";
 import { grocai } from "./src/Groqai";
 
 
