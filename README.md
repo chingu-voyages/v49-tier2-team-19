@@ -13,6 +13,41 @@ in your `readme` feel free to replace the text we've provided here.
 
 > Own it & Make it your Own!
 
+# How to Setup your Developer Environment (edits welcome!)
+
+Open your terminal and navigate to your local copy of the git repository. If you don't have the git repository cloned yet, please enter the following command in your terminal:
+
+`git clone https://github.com/chingu-voyages/v49-tier2-team-19.git`
+
+Once the folder is cloned, follow the rest of the instructions below.
+
+Navigate to the colorpicker folder.
+```
+cd colorpicker
+```
+
+Install the code library requirements.
+```
+yarn
+```
+
+Run the app!
+```
+yarn run dev
+```
+
+You should now see a message in your terminal like
+```
+  VITE v5.2.11  ready in 988 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+```
+
+## Remaining questions for team to discuss in standup
+1. Do we want to use yarn or npm for package / library management? I'm not sure why we have both types of package manager files in our repository.
+
 ## Team Documents
 
 You may find these helpful as you work together to organize your project.
