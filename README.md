@@ -13,6 +13,41 @@ in your `readme` feel free to replace the text we've provided here.
 
 > Own it & Make it your Own!
 
+# How to Setup your Developer Environment (edits welcome!)
+
+Open your terminal and navigate to your local copy of the git repository. If you don't have the git repository cloned yet, please enter the following command in your terminal:
+
+`git clone https://github.com/chingu-voyages/v49-tier2-team-19.git`
+
+Once the folder is cloned, follow the rest of the instructions below.
+
+Navigate to the colorpicker folder.
+```
+cd colorpicker
+```
+
+Install the code library requirements.
+```
+yarn
+```
+
+Run the app!
+```
+yarn run dev
+```
+
+You should now see a message in your terminal like
+```
+  VITE v5.2.11  ready in 988 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+```
+
+## Remaining questions for team to discuss in standup
+1. Do we want to use yarn or npm for package / library management? I'm not sure why we have both types of package manager files in our repository.
+
 ## Team Documents
 
 You may find these helpful as you work together to organize your project.
@@ -34,10 +69,11 @@ Everyone on your team should add their name along with a link to their GitHub
 your repo access and to practice PR'ing with your team *before* you start
 coding!
 
-- Lianna Novitz #1: [GitHub](https://github.com/lnovitz) / [LinkedIn](https://linkedin.com/in/liannanovitz)
-- Teammate name #2: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-- Isabel Klint #3: [GitHub](https://github.com/isabelklint) / [LinkedIn](https://linkedin.com/in/isabel-klint)
-- Corinna Bolon #4: [GitHub](https://github.com/corinnabolon) / [LinkedIn](https://www.linkedin.com/in/corinna-bolon-690003297/)
-- Deepali Sangole #5: [GitHub](https://github.com/ss-deep) / [LinkedIn](https://www.linkedin.com/in/deepali-sangole-49b0841b/)
-- Ja'Mesa Dixon #7: [GitHub](https://github.com/MeMeD10) / [LinkedIn](https://linkedin.com/in/JaMesa-Dixon)
-- Hector Garcia #8: [GitHub](https://github.com/hectorgarcia07) / [LinkedIn](https://www.linkedin.com/in/hectorgarcia01/)
+- Lianna Novitz #1: [GitHub](https://github.com/lnovitz) / [LinkedIn](https://linkedin.com/in/liannanovitz) 
+- Isabel Klint #2: [GitHub](https://github.com/isabelklint) / [LinkedIn](https://linkedin.com/in/isabel-klint)
+- Corinna Bolon #3: [GitHub](https://github.com/corinnabolon) / [LinkedIn](https://www.linkedin.com/in/corinna-bolon-690003297/)
+- Deepali Sangole #4: [GitHub](https://github.com/ss-deep) / [LinkedIn](https://www.linkedin.com/in/deepali-sangole-49b0841b/)
+- Ja'Mesa Dixon #5: [GitHub](https://github.com/MeMeD10) / [LinkedIn](https://linkedin.com/in/JaMesa-Dixon)
+- Hector Garcia #6: [GitHub](https://github.com/hectorgarcia07) / [LinkedIn](https://www.linkedin.com/in/hectorgarcia01/)
+
+- Email list:  csharp12321@gmail.com; liannanovitz@gmail.com; deepalisangole@gmail.com; kyndrill@gmail.com; isabel.klint@gmail.com

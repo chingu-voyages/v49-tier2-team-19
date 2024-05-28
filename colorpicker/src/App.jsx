@@ -2,6 +2,19 @@ import { useColor } from "react-color-palette";
 import { formatHsv, formatRgba } from "./utils/format/format";
 import { ColorPicker } from "./components/ColorPicker/ColorPicker"
 
+import './index.css'; // added by isabel may 25 24
+import "./App.css";
+import TextForm from './TextForm';
+
+
+// https://serpapi.com/blog/create-super-fast-ai-assistant-with-groq/
+// https://www.youtube.com/watch?v=hw_J53MZT4o
+
+// i could put default values here
+// i could have a custom submit handler here
+// and pass these to textform and that would be 'props'
+// 'function components in react define ui elements'
+
 export default function App() {
   const [color, setColor] = useColor("rgb(86 30 203)")
   
@@ -19,10 +32,14 @@ export default function App() {
   return (
     <>
       <h1 className="text-3xl font-bold underline">
-        Hello world!
+        Colormee!
       </h1>
           
       <ColorPicker color={color} onChange={setColor} />
+
+      <div>For color recommendations, input a hex code you like and tell me what you need colors for.</div>
+      {/* TextForm creates my input boxes and shows output in a textarea*/}
+      <TextForm />
     </>
   )
 }
