@@ -1,11 +1,12 @@
-import { Saturation, Hue, Alpha, useColor } from "react-color-palette";
+import { memo } from 'react';
+import { Saturation, Hue, Alpha } from "react-color-palette";
 import "react-color-palette/css";
 import { rgba } from 'polished'
-import { formatRgb, formatRgbCSS } from "../../utils/format/format";
+import { formatRgba, formatRgbaCSS } from "../../utils/format/format";
+import Fields from './Fields';
 
-export function ColorPicker() {
-  const [color, setColor] = useColor("hsl(120 100% 50% / .5)")
-  let colorArr = formatRgbCSS(color.rgb)
+export const ColorPicker = memo(function ColorPicker({color, onChange}) {
+  let colorArr = formatRgbaCSS(color.rgb)
 
   const divStyle = {
     backgroundColor: rgba(...colorArr),
@@ -17,32 +18,26 @@ export function ColorPicker() {
   const padding = { padding: '0.5rem 0'}
 
   return (
-    <div className="custom-layout">
+    <div >
       <div style={padding }>
-        <Saturation height={300} color={color} onChange={setColor} />
+        <Saturation height={300} color={color} onChange={onChange} />
       </div>   
 
       <div style={padding}>
-        <Hue color={color} onChange={setColor} />
+        <Hue color={color} onChange={onChange} />
       </div>
       
       <div style={padding}>
-        <Alpha color={color} onChange={setColor} />
+        <Alpha color={color} onChange={onChange} />
       </div>
 
-      <h1>Color: {formatRgb(color.rgb)}</h1>
+      <h1>Color: {formatRgba(color.rgb)}</h1>
       
       <div style={divStyle}>
       </div>
+
+      <Fields color={color} onChange={onChange} />
     </div>
   );
 }
-
-/* import { ColorPicker as ColorPickerUI, useColor } from "react-color-palette";
-import "react-color-palette/css";
-
-export function ColorPicker() {
-  const [color, setColor] = useColor("#561ecb");
-
-  return <ColorPickerUI color={color} onChange={setColor} />;
-} */
+)
