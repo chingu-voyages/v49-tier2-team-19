@@ -3,4 +3,4 @@
   publish = "dist"            # Change this to your build output directory
 
 [build.environment]
-  NODE_VERSION = "18"         # Adjust the Node.js version if necessary
+  NODE_VERSION = "20"         # Adjust the Node.js version if necessary
