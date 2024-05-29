@@ -5,16 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "./node_modules/.bin/vite build",
+    "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.9.2",
-    "polished": "^4.3.1",
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
     "groq-sdk": "^0.4.0",
+    "package.json": "^2.0.1",
+    "polished": "^4.3.1",
     "react": "^18.2.0",
     "react-color-palette": "^7.1.1",
     "react-dom": "^18.2.0"
@@ -31,5 +31,9 @@
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
     "vite": "^5.2.12"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "postcss.config.js",
+  "author": "",
+  "license": "ISC"
 }
