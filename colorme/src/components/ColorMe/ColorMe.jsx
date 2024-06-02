@@ -12,26 +12,20 @@ const ColorMe = memo(function ColorMe() {
 
   const divStyle = {
     backgroundColor: rgba(...colorArr),
-    width: '100px',
-    height: '100px',
-    padding: '100px'
   };
 
-  const padding = { padding: '0.5rem 0' };
-
   return (
-    <div>
-      <div style={padding}>
+    <div className="p-4 bg-white rounded-lg shadow-md">
+      <div className="py-2">
         <Saturation height={300} color={color} onChange={setColor} />
       </div>
-      <div style={padding}>
+      <div className="py-2">
         <Hue color={color} onChange={setColor} />
       </div>
-      <div style={padding}>
+      <div className="py-2">
         <Alpha color={color} onChange={setColor} />
       </div>
-      <h1>Color: {formatRgba(color.rgb)}</h1>
-      <div style={divStyle}></div>
+      <div className="w-48 h-48 mb-4" style={divStyle}></div>
       <Fields color={color} onChange={setColor} />
     </div>
   );

@@ -1,19 +1,23 @@
 import React from 'react';
-import ColorMe from "./components/ColorMe/ColorMe";
-import './index.css';
-import "./App.css";
+import ColorMe from './components/ColorMe/ColorMe';
 import TextForm from './TextForm';
-import useStore from './store/useStore';
+import './index.css';
 
 export default function App() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">
-        Colorme!
-      </h1>
-      <ColorMe />
-      <div>For color recommendations, input a description and tell me what you need colors for.</div>
-      <TextForm />
+    <div className="container mx-auto p-6 bg-gray-100 rounded-lg shadow-lg">
+      <h1 className="text-3xl font-bold no-underline mb-4">Colorme!</h1>
+      <div className="flex space-x-4">
+        <div className="flex-1">
+          <ColorMe />
+        </div>
+        <div className="flex-1">
+          <div className="mb-4">
+            For color recommendations, tell me what these colors are for by typing a description below.
+          </div>
+          <TextForm />
+        </div>
+      </div>
     </div>
   );
 }

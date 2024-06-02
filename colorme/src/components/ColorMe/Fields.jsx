@@ -1,13 +1,21 @@
-// src/components/ColorMe/Fields.jsx
-import React, { memo, useCallback, useEffect, useState } from "react";
-import { ColorService } from "../../service/color/ColorService";
-import { formatHsv, formatRgba } from "../../utils/format/format";
+import { memo, useCallback, useEffect, useState } from "react";
+import { ColorService } from "../../service/color/ColorService.js";
+import { formatHsv, formatRgba } from "../../utils/format/format.js";
 
 const Fields = memo(({ color, onChange }) => {
   const [fields, setFields] = useState({
-    hex: { value: color.hex, inputted: false },
-    rgb: { value: formatRgba(color.rgb), inputted: false },
-    hsv: { value: formatHsv(color.hsv), inputted: false },
+    hex: {
+      value: color.hex,
+      inputted: false,
+    },
+    rgb: {
+      value: formatRgba(color.rgb),
+      inputted: false,
+    },
+    hsv: {
+      value: formatHsv(color.hsv),
+      inputted: false,
+    },
   });
 
   useEffect(() => {
@@ -29,62 +37,65 @@ const Fields = memo(({ color, onChange }) => {
   }, [fields.hsv.inputted, color.hsv]);
 
   const onInputChange = useCallback(
-    (field) => (event) => {
-      const { value } = event.target;
-      setFields((fields) => ({ ...fields, [field]: { ...fields[field], value } }));
-      if (field === "hsv") onChange(ColorService.convert("hsv", ColorService.toHsv(value)));
-      else if (field === "rgb") onChange(ColorService.convert("rgb", ColorService.toRgb(value)));
-      else onChange(ColorService.convert("hex", value));
-    },
+    (field) =>
+      (event) => {
+        const { value } = event.target;
+
+        setFields((fields) => ({ ...fields, [field]: { ...fields[field], value } }));
+
+        if (field === "hsv") onChange(ColorService.convert("hsv", ColorService.toHsv(value)));
+        else if (field === "rgb") onChange(ColorService.convert("rgb", ColorService.toRgb(value)));
+        else onChange(ColorService.convert("hex", value));
+      },
     [onChange]
   );
 
   const onInputFocus = useCallback(
-    (field) => () => setFields((fields) => ({ ...fields, [field]: { ...fields[field], inputted: true } })),
+    (field) =>
+      () => {
+        setFields((fields) => ({ ...fields, [field]: { ...fields[field], inputted: true } }));
+      },
     []
   );
 
   const onInputBlur = useCallback(
-    (field) => () => setFields((fields) => ({ ...fields, [field]: { ...fields[field], inputted: false } })),
+    (field) =>
+      () => {
+        setFields((fields) => ({ ...fields, [field]: { ...fields[field], inputted: false } }));
+      },
     []
   );
 
   return (
-    <div>
-      <div>
-        <label htmlFor="hex" className="rcp-field-label">
-          HEX
-        </label>
+    <div className="space-y-4">
+      <div className="flex items-center">
+        <label htmlFor="hex" className="w-20">HEX</label>
         <input
           id="hex"
+          className="border border-gray-300 p-2 rounded w-full"
           value={fields.hex.value}
-          className="rcp-field-input"
           onChange={onInputChange("hex")}
           onFocus={onInputFocus("hex")}
           onBlur={onInputBlur("hex")}
         />
       </div>
-      <div>
-        <label htmlFor="rgb" className="rcp-field-label">
-          RGB
-        </label>
+      <div className="flex items-center">
+        <label htmlFor="rgb" className="w-20">RGB</label>
         <input
           id="rgb"
+          className="border border-gray-300 p-2 rounded w-full"
           value={fields.rgb.value}
-          className="rcp-field-input"
           onChange={onInputChange("rgb")}
           onFocus={onInputFocus("rgb")}
           onBlur={onInputBlur("rgb")}
         />
       </div>
-      <div>
-        <label htmlFor="hsv" className="rcp-field-label">
-          HSV
-        </label>
+      <div className="flex items-center">
+        <label htmlFor="hsv" className="w-20">HSV</label>
         <input
           id="hsv"
+          className="border border-gray-300 p-2 rounded w-full"
           value={fields.hsv.value}
-          className="rcp-field-input"
           onChange={onInputChange("hsv")}
           onFocus={onInputFocus("hsv")}
           onBlur={onInputBlur("hsv")}
@@ -94,4 +105,5 @@ const Fields = memo(({ color, onChange }) => {
   );
 });
 
+Fields.displayName = 'Fields'
 export default Fields;

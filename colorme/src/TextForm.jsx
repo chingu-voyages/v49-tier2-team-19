@@ -28,50 +28,49 @@ export default function TextForm() {
   };
 
   const renderPalette = (palette, title) => (
-    <div>
-      <h2>{title}</h2>
-      <div style={{ display: 'flex', gap: '10px', margin: '10px 0' }}>
+    <div className="my-4">
+      <h2 className="text-xl font-semibold mb-2">{title}</h2>
+      <div className="flex gap-4 mb-2">
         {palette.Colors.map((colorItem, index) => (
-          <div key={index} style={{ textAlign: 'center' }}>
+          <div key={index} className="text-center">
             <div
+              className="w-24 h-24 mb-1"
               style={{
                 backgroundColor: colorItem['Hex Code'],
-                width: '50px',
-                height: '50px',
-                marginBottom: '5px'
               }}
             />
-            <span>{colorItem.Name}</span>
+            <span className="text-xs">{colorItem.Name}</span>
           </div>
         ))}
       </div>
       <textarea
         value={palette.Description}
         rows={3}
-        cols={50}
         readOnly
-        style={{ height: '60px' }}
+        className="w-full p-2 border border-gray-300 rounded"
       />
     </div>
   );
 
   return (
-    <div>
-      <label>
+    <div className="p-4 bg-white rounded-lg shadow-md container mx-auto">
+      <label className="block mb-2">
         Description:&nbsp;
         <input
           value={describeText}
           onChange={(e) => setDescribeText(e.target.value)}
           type="text"
+          className="border border-gray-300 p-2 rounded w-full"
         />
       </label>
-      <br />
-      <button onClick={handleSubmit}>
+      <button
+        onClick={handleSubmit}
+        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+      >
         Submit
       </button>
-      <br />
       {loading && (
-        <div style={{ margin: '20px 0' }}>
+        <div className="my-4 flex justify-center">
           <ClipLoader color="#123abc" loading={loading} size={50} />
         </div>
       )}
