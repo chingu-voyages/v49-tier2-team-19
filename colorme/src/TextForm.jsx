@@ -3,6 +3,8 @@ import { getColors } from './service/groqaiService';
 import useStore from './store/useStore';
 import { ClipLoader } from 'react-spinners';
 
+import './App.css'; // Assuming your stylesheet is named 'styles.css'
+
 export default function TextForm() {
   const color = useStore((state) => state.color);
   const describeText = useStore((state) => state.describeText);
@@ -27,7 +29,7 @@ export default function TextForm() {
     }
   };
 
-  const handleKeyPress = (e) => {
+  const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
       handleSubmit();
@@ -38,6 +40,15 @@ export default function TextForm() {
     <div className="my-4">
       <h2 className="text-xl font-semibold mb-2">{title}</h2>
       <div className="flex gap-4 mb-2">
+        <div className="text-center">
+          <div
+            className="w-24 h-24 mb-1"
+            style={{
+              backgroundColor: color.hex,
+            }}
+          />
+          <span className="text-sm font-bold">{describeText}</span>
+        </div>
         {palette.Colors.map((colorItem, index) => (
           <div key={index} className="text-center">
             <div
@@ -52,7 +63,7 @@ export default function TextForm() {
       </div>
       <textarea
         value={palette.Description}
-        rows={5}
+        rows={7} // Increased from 5 to 7 for better readability
         readOnly
         className="w-full p-2 border border-gray-300 rounded"
       />
@@ -65,14 +76,18 @@ export default function TextForm() {
         For color recommendations, tell me what these colors are for by typing a description below.
       </div>
       <div className="flex items-center mb-4">
-        <label className="mr-2 text-gray-600">Description:</label>
+        <label className="mr-2 text-black">Description:</label>
         <input
-          value={describeText}
-          onChange={(e) => setDescribeText(e.target.value)}
-          type="text"
-          className="border border-gray-300 p-2 rounded w-full text-gray-600"
-          onKeyPress={handleKeyPress}
-        />
+  value={describeText}
+  onChange={(e) => setDescribeText(e.target.value)}
+  type="text"
+  className="border border-gray-300 p-2 rounded user-input"
+  style={{
+    fontWeight: describeText ? 'bold' : 'normal',
+    width: describeText ? 'calc(100% - 60px)' : '100%',
+    color: describeText ? 'black' : 'grey' // Set the color based on user input
+  }}
+/>
         <button
           onClick={handleSubmit}
           className="bg-blue-500 text-white px-4 py-2 rounded ml-2 hover:bg-blue-600"
@@ -85,8 +100,8 @@ export default function TextForm() {
           <ClipLoader color="#123abc" loading={loading} size={50} />
         </div>
       )}
-      {palettes.palette1 && renderPalette(palettes.palette1, `Palette 1: ${describeText} (${color.hex})`)}
-      {palettes.palette2 && renderPalette(palettes.palette2, `Palette 2: ${describeText} (${color.hex})`)}
+      {palettes.palette1 && renderPalette(palettes.palette1, 'Palette 1')}
+      {palettes.palette2 && renderPalette(palettes.palette2, 'Palette 2')}
     </div>
-  );
+  );  
 }

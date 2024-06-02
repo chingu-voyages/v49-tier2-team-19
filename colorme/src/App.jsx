@@ -12,9 +12,6 @@ export default function App() {
           <ColorMe />
         </div>
         <div className="flex-1">
-          <div className="mb-4">
-            For color recommendations, tell me what these colors are for by typing a description below.
-          </div>
           <TextForm />
         </div>
       </div>
