@@ -1,7 +1,7 @@
 import create from 'zustand';
 
 const useStore = create((set) => ({
-  color: 'rgb(86, 30, 203)',
+  color: { rgb: { r: 86, g: 30, b: 203, a: 1 }, hex: '#561ECB', hsv: { h: 250, s: 85, v: 79, a: 1 } },
   description: '',
   palettes: [],
   setColor: (color) => set({ color }),

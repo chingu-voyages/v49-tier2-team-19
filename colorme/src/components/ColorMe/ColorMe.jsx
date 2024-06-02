@@ -1,43 +1,39 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 import { Saturation, Hue, Alpha } from "react-color-palette";
 import "react-color-palette/css";
-import { rgba } from 'polished'
+import { rgba } from 'polished';
 import { formatRgba, formatRgbaCSS } from "../../utils/format/format";
 import Fields from './Fields';
+import useStore from '../../store';
 
-export const ColorMe = memo(function ColorMe({color, onChange}) {
-  let colorArr = formatRgbaCSS(color.rgb)
+export const ColorMe = memo(function ColorMe() {
+  const color = useStore((state) => state.color);
+  const setColor = useStore((state) => state.setColor);
+  let colorArr = formatRgbaCSS(color.rgb);
 
   const divStyle = {
     backgroundColor: rgba(...colorArr),
     width: '100px',
     height: '100px',
     padding: '100px'
-  }
+  };
 
-  const padding = { padding: '0.5rem 0'}
+  const padding = { padding: '0.5rem 0' };
 
   return (
-    <div >
-      <div style={padding }>
-        <Saturation height={300} color={color} onChange={onChange} />
-      </div>   
-
+    <div>
       <div style={padding}>
-        <Hue color={color} onChange={onChange} />
+        <Saturation height={300} color={color} onChange={setColor} />
       </div>
-      
       <div style={padding}>
-        <Alpha color={color} onChange={onChange} />
+        <Hue color={color} onChange={setColor} />
       </div>
-
+      <div style={padding}>
+        <Alpha color={color} onChange={setColor} />
+      </div>
       <h1>Color: {formatRgba(color.rgb)}</h1>
-      
-      <div style={divStyle}>
-      </div>
-
-      <Fields color={color} onChange={onChange} />
+      <div style={divStyle}></div>
+      <Fields color={color} onChange={setColor} />
     </div>
   );
-}
-)
+});
