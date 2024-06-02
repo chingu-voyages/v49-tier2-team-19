@@ -1,6 +1,6 @@
 import { useColor } from "react-color-palette";
 import { formatHsv, formatRgba } from "./utils/format/format";
-import { ColorPicker } from "./components/ColorPicker/ColorPicker"
+import { ColorMe } from "./components/ColorMe/ColorMe"
 
 import './index.css'; // added by isabel may 25 24
 import "./App.css";
@@ -35,7 +35,7 @@ export default function App() {
         Colormee!
       </h1>
           
-      <ColorPicker color={color} onChange={setColor} />
+      <ColorMe color={color} onChange={setColor} />
 
       <div>For color recommendations, input a hex code you like and tell me what you need colors for.</div>
       {/* TextForm creates my input boxes and shows output in a textarea*/}
