@@ -4,11 +4,10 @@ import "react-color-palette/css";
 import { rgba } from 'polished';
 import { formatRgba, formatRgbaCSS } from "../../utils/format/format";
 import Fields from './Fields';
-import useStore from '../../store';
+import useStore from "../../store/useStore";
 
-export const ColorMe = memo(function ColorMe() {
-  const color = useStore((state) => state.color);
-  const setColor = useStore((state) => state.setColor);
+const ColorMe = memo(function ColorMe() {
+  const { color, setColor } = useStore();
   let colorArr = formatRgbaCSS(color.rgb);
 
   const divStyle = {
@@ -37,3 +36,5 @@ export const ColorMe = memo(function ColorMe() {
     </div>
   );
 });
+
+export default ColorMe;
