@@ -31,7 +31,7 @@ export default function App() {
 
   return (
     <>
-      <HeaderBar className="sticky"></HeaderBar>
+      <HeaderBar/>
       <ColorPicker color={color} onChange={setColor} />
 
       <div>For color recommendations, input a hex code you like and tell me what you need colors for.</div>
