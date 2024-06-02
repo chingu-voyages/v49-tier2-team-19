@@ -24,9 +24,11 @@ export default function App() {
     hex: color.hex
     HSV: formatHsv(color.hsv)
   */
+  /*
   console.log("rgba", formatRgba(color.rgb))
   console.log("hex", color.hex)
   console.log("HSV", formatHsv(color.hsv))
+  */
 
 
   return (
@@ -39,7 +41,8 @@ export default function App() {
 
       <div>For color recommendations, input a hex code you like and tell me what you need colors for.</div>
       {/* TextForm creates my input boxes and shows output in a textarea*/}
-      <TextForm />
+      
+      <TextForm color={color}/>
     </>
   )
 }

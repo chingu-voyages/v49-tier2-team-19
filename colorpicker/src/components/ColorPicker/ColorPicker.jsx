@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { Saturation, Hue, Alpha } from "react-color-palette";
 import "react-color-palette/css";
 import { rgba } from 'polished'
-import { formatRgba, formatRgbaCSS } from "../../utils/format/format";
+import { formatRgbaCSS } from "../../utils/format/format";
 import Fields from './Fields';
 
 export const ColorPicker = memo(function ColorPicker({color, onChange}) {
@@ -30,8 +30,6 @@ export const ColorPicker = memo(function ColorPicker({color, onChange}) {
       <div style={padding}>
         <Alpha color={color} onChange={onChange} />
       </div>
-
-      <h1>Color: {formatRgba(color.rgb)}</h1>
       
       <div style={divStyle}>
       </div>

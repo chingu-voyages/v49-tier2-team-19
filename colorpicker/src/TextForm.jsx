@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { getColors } from './groqaiService';
 // textform is not taking any props from App, props
 // are data from parent to child component
@@ -9,22 +9,20 @@ import { getColors } from './groqaiService';
 // it allows embedding of javascript expressions
 
 // i'm a custom component
-export default function TextForm() {
-  const defaultHex = 'DD5537';
+export default function TextForm({ color }) {
+  const hexCode = color.hex;
   const defaultPrompt = 'my livingroom couch';
 
   // state management: useState is a hook that allows us to manage state
   // response holds the ai's reponse
   const [response, setResponse] = useState('');
-  // hextext holds the input hex code
-  const [hexText, setHexText] = useState(defaultHex);
   // describetext holds the phrase input by user
   const [describeText, setDescribeText] = useState(defaultPrompt);
 
   // asynchronous function
   const handleSubmit = async () => {
     try {
-      const colorsResponse = await getColors(hexText, describeText);
+      const colorsResponse = await getColors(hexCode, describeText);
       // set the response directly (string)
       setResponse(colorsResponse);
     } catch (error) {
@@ -37,14 +35,9 @@ export default function TextForm() {
   // it's jsx
   return (
     <div>
-      <label>
-        Hex code:&nbsp;
-        <input
-          value={hexText}
-          onChange={e => setHexText(e.target.value)}
-          type="text"
-        />
-      </label>
+      <div>
+        Hex code: {hexCode}
+      </div>
       <br />
       <label>
         Description:&nbsp; 
