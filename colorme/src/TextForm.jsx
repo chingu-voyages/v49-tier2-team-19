@@ -27,6 +27,13 @@ export default function TextForm() {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSubmit();
+    }
+  };
+
   const renderPalette = (palette, title) => (
     <div className="my-4">
       <h2 className="text-xl font-semibold mb-2">{title}</h2>
@@ -39,13 +46,13 @@ export default function TextForm() {
                 backgroundColor: colorItem['Hex Code'],
               }}
             />
-            <span className="text-xs">{colorItem.Name}</span>
+            <span className="text-sm">{colorItem.Name}</span>
           </div>
         ))}
       </div>
       <textarea
         value={palette.Description}
-        rows={3}
+        rows={5}
         readOnly
         className="w-full p-2 border border-gray-300 rounded"
       />
@@ -53,22 +60,26 @@ export default function TextForm() {
   );
 
   return (
-    <div className="p-4 bg-white rounded-lg shadow-md container mx-auto">
-      <label className="block mb-2">
-        Description:&nbsp;
+    <div className="p-4 bg-white rounded-lg shadow-md">
+      <div className="text-lg mb-4">
+        For color recommendations, tell me what these colors are for by typing a description below.
+      </div>
+      <div className="flex items-center mb-4">
+        <label className="mr-2 text-gray-600">Description:</label>
         <input
           value={describeText}
           onChange={(e) => setDescribeText(e.target.value)}
           type="text"
-          className="border border-gray-300 p-2 rounded w-full"
+          className="border border-gray-300 p-2 rounded w-full text-gray-600"
+          onKeyPress={handleKeyPress}
         />
-      </label>
-      <button
-        onClick={handleSubmit}
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-      >
-        Submit
-      </button>
+        <button
+          onClick={handleSubmit}
+          className="bg-blue-500 text-white px-4 py-2 rounded ml-2 hover:bg-blue-600"
+        >
+          Submit
+        </button>
+      </div>
       {loading && (
         <div className="my-4 flex justify-center">
           <ClipLoader color="#123abc" loading={loading} size={50} />
