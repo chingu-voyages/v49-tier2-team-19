@@ -1,7 +1,7 @@
 import { useColor } from "react-color-palette";
 import { formatHsv, formatRgba } from "./utils/format/format";
-import { ColorPicker } from "./components/ColorPicker/ColorPicker"
-
+import { ColorPicker } from "./components/ColorPicker/ColorPicker";
+import HeaderBar from "./components/HeaderBar";
 import './index.css'; // added by isabel may 25 24
 import "./App.css";
 import TextForm from './TextForm';
@@ -31,10 +31,7 @@ export default function App() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline">
-        Colormee!
-      </h1>
-          
+      <HeaderBar/>
       <ColorPicker color={color} onChange={setColor} />
 
       <div>For color recommendations, input a hex code you like and tell me what you need colors for.</div>
