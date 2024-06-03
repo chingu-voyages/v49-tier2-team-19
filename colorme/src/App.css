@@ -26,6 +26,13 @@ button {
     background-color: lightgray;
   }
 
+  /* make flexbox layout
+  /* space between is make the components 
+  /* evenly distributed 
+  /* gap is space between components
+  /* padding is around the container
+
+
   /* .container {
     display: flex;
     justify-content: space-between;
@@ -33,6 +40,8 @@ button {
     padding: 20px;
   }
   
+  /* flex: 1 makes components take up equal space in container
+
   .container > * {
     flex: 1;
   } */
