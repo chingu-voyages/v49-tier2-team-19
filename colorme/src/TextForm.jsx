@@ -125,6 +125,11 @@ export default function TextForm() {
   // it's jsx
   return (
     <div>
+      {/*
+      <div>
+        For color recommendations, input a hex code you like and tell me what you need colors for.
+      </div>
+      */}
       <label>
         Hex code:&nbsp;
         <input
