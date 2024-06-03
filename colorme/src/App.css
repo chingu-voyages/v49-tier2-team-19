@@ -25,3 +25,14 @@ button {
     border-radius: 4px;
     background-color: lightgray;
   }
+
+  /* .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .container > * {
+    flex: 1;
+  } */
