@@ -5,8 +5,7 @@ import { Groq } from "groq-sdk";
 // initialize the Groq instance
 const groq = new Groq({
   // key in .env it's free so who cares if we expose it
-  apiKey: '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',
-  dangerouslyAllowBrowser: true
+  
 });
 
 // this function gets color recommendations
@@ -33,6 +32,7 @@ export const getColors = async (hexCode, text) => {
       recommendations += `${recommendedColor},\n`;
 
       console.log(recommendations)
+      console.log("RESPONSE", recommendations)
     }
 
     console.log(recommendations)

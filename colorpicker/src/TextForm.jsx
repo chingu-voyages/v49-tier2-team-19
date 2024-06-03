@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getColors } from './groqaiService';
+import { grocai } from './Groqai';
 // textform is not taking any props from App, props
 // are data from parent to child component
 // but we should have that maybe? idk
@@ -22,7 +22,7 @@ export default function TextForm({ color }) {
   // asynchronous function
   const handleSubmit = async () => {
     try {
-      const colorsResponse = await getColors(hexCode, describeText);
+      const colorsResponse = await grocai(hexCode, describeText);
       // set the response directly (string)
       setResponse(colorsResponse);
     } catch (error) {

@@ -2,7 +2,7 @@
 /* eslint-disable no-undef */
 import Groq from "groq-sdk";
 
-const groq = new Groq();
+const groq = new Groq({    apiKey: process.env.GROQ_API_KEY});
 
 export const grocai = async () => {
   try {
@@ -26,7 +26,6 @@ export const grocai = async () => {
     let resp
   for await (const chunk of chatCompletion) {
      resp += chunk.choices[0]?.delta?.content || ''
-    // process.stdout.write(chunk.choices[0]?.delta?.content || '');
   }
     const pattern = /\{[\s\S]*\}/;
     const match = resp.match(pattern);

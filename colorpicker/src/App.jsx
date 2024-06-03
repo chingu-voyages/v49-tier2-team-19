@@ -41,8 +41,9 @@ export default function App() {
 
       <div>For color recommendations, input a hex code you like and tell me what you need colors for.</div>
       {/* TextForm creates my input boxes and shows output in a textarea*/}
-      
-      <TextForm color={color}/>
+
+      <TextForm color={color} />
+
     </>
   )
 }
