@@ -31,6 +31,7 @@ export default function TextForm() {
       // set the response directly (string)
       setResponse(colorsResponse);
       // add palettes
+      console.log(colorsResponse);
       setPalettes(JSON.parse(colorsResponse));
       // from the json from groq ai
     } catch (error) {

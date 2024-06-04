@@ -32,13 +32,10 @@ export default function App() {
   return (
     <>
       <HeaderBar/>
-      {/*}<div className="container">*/}
+      <div className="container">
       <ColorMe color={color} onChange={setColor} />
-
-      <div>For color recommendations, input a hex code you like and tell me what you need colors for.</div>
-      {/* TextForm creates my input boxes and shows output in a textarea*/}
       <TextForm />
-      {/*</div>*/}
+      </div>
     </>
   );
 }
