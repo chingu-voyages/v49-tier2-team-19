@@ -31,7 +31,6 @@ export default function TextForm() {
       // set the response directly (string)
       setResponse(colorsResponse);
       // add palettes
-      console.log(colorsResponse);
       setPalettes(JSON.parse(colorsResponse));
       // from the json from groq ai
     } catch (error) {
@@ -46,7 +45,6 @@ const renderPalette = (palette, index) => (
   <div key={index} style={{ marginBottom: '20px' }}>
     <h3>{`Palette ${index + 1}: ${palette.Name}`}</h3>
     <div style={{ display: 'flex', alignItems: 'center' }}>
-
       <div style={{
         width: '50px',
         height: '50px',
@@ -83,14 +81,7 @@ const renderPalette = (palette, index) => (
   // it's jsx
   return (
     <div>
-      <label>
-        Hex code:&nbsp;
-        <input
-          value={hexText}
-          onChange={e => setHexText(e.target.value)}
-          type="text"
-        />
-      </label>
+      <div>Here put your description</div>
       <br />
       <label>
         Description:&nbsp; 
