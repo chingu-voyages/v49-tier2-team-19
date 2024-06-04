@@ -10,14 +10,14 @@ import { getColors } from './groqaiService';
 
 // i'm a custom component
 export default function TextForm() {
-  const defaultHex = 'DD5537';
+  const defaultHex = 'aaaaaa';
   const defaultPrompt = 'my livingroom couch';
 
   // state management: useState is a hook that allows us to manage state
   // response holds the ai's reponse
   const [response, setResponse] = useState('');
   // hextext holds the input hex code
-  const [hexText, setHexText] = useState(defaultHex);
+  const [hexText, setHexText] = useState('');
   // describetext holds the phrase input by user
   const [describeText, setDescribeText] = useState(defaultPrompt);
   // add palettes
@@ -41,17 +41,9 @@ export default function TextForm() {
   };
 
 const renderPalette = (palette, index) => (
-
   <div key={index} style={{ marginBottom: '20px' }}>
     <h3>{`Palette ${index + 1}: ${palette.Name}`}</h3>
     <div style={{ display: 'flex', alignItems: 'center' }}>
-      <div style={{
-        width: '50px',
-        height: '50px',
-        backgroundColor: hexText,
-        margin: '0 5px'
-      }}>
-      </div>
       {palette.Colors.map((color, idx) => (
         <div key={idx} style={{
           width: '50px',
@@ -63,7 +55,6 @@ const renderPalette = (palette, index) => (
       ))}
     </div>
     <div style={{ display: 'flex', justifyContent: 'space-between', maxWidth: `${50 * (palette.Colors.length + 1)}px` }}>
-      <span>{describeText}</span>
       {palette.Colors.map((color, idx) => (
         <span key={idx}>{color.Name}</span>
       ))}

@@ -22,7 +22,7 @@ export const getColors = async (hexCode, description) => {
         {
           role: 'user',
           content: `Give me a json object: a single palette that holds color five recommendations that is exactly in the format:
-{"Palette 1":{"Name":"Desert Dream","Colors":[{"Hex Code":"#FF5733","Name":"Sunset Orange"}],"Description":"This palette is inspired by the vibrant colors of a desert sunset and adds warmth and energy to your outdoor space. The bold oranges and yellows evoke feelings of excitement and joy, while the earthy tones of sienna and terracotta bring a sense of grounding and stability."}}`
+{"Palette 1":{{"Name":"Desert Dream","Colors":[{"Hex Code":"#FF5733","Name":"Sunset Orange"}],"Description":"This palette is inspired by the vibrant colors of a desert sunset and adds warmth and energy to your outdoor space. The bold oranges and yellows evoke feelings of excitement and joy, while the earthy tones of sienna and terracotta bring a sense of grounding and stability."}}`
         }
       ],
       model: 'llama3-8b-8192',
