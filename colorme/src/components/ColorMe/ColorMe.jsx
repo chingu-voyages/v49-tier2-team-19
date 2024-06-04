@@ -5,7 +5,7 @@ import { rgba } from 'polished'
 import { formatRgba, formatRgbaCSS } from "../../utils/format/format";
 import Fields from './Fields';
 
-export const ColorPicker = memo(function ColorPicker({color, onChange}) {
+export const ColorMe = memo(function ColorMe({color, onChange}) {
   let colorArr = formatRgbaCSS(color.rgb)
 
   const divStyle = {
