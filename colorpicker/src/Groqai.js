@@ -2,7 +2,7 @@
 /* eslint-disable no-undef */
 import Groq from "groq-sdk";
 
-const groq = new Groq({    apiKey: process.env.GROQ_API_KEY});
+const groq = new Groq({ apiKey: import.meta.env.VITE_GROQ_API_KEY });
 
 export const grocai = async () => {
   try {
