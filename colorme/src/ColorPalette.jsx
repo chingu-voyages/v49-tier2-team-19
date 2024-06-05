@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { getColors } from './groqaiService';
-// textform is not taking any props from App, props
+// colorpalette is not taking any props from App, props
 // are data from parent to child component
 // but we should have that maybe? idk
 // if defaults and submit handling were in app.jsx 
-// then textform would get these props
+// then colorpalette would get these props
 // jsx is a syntax that describes the UI, like html
 // it allows embedding of javascript expressions
 
 // i'm a custom component
-export default function TextForm() {
+export default function ColorPalette() {
   const defaultHex = 'aaaaaa';
   const defaultPrompt = 'my livingroom couch';
 

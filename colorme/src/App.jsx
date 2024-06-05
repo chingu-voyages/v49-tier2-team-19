@@ -5,14 +5,14 @@ import HeaderBar from "./components/HeaderBar";
 import FooterBar from "./components/FooterBar";
 import "./index.css"; // added by isabel may 25 24
 import "./App.css";
-import TextForm from "./TextForm";
+import ColorPalette from "./ColorPalette";
 
 // https://serpapi.com/blog/create-super-fast-ai-assistant-with-groq/
 // https://www.youtube.com/watch?v=hw_J53MZT4o
 
 // i could put default values here
 // i could have a custom submit handler here
-// and pass these to textform and that would be 'props'
+// and pass these to colorpalette and that would be 'props'
 // 'function components in react define ui elements'
 
 export default function App() {
@@ -33,7 +33,7 @@ export default function App() {
       <HeaderBar />
       <div className="container">
         <ColorMe color={color} onChange={setColor} />
-        <TextForm />
+        <ColorPalette />
       </div>
       <FooterBar />
     </>
