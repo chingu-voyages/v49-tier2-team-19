@@ -9,9 +9,10 @@ import { getColors } from "./groqaiService";
 // it allows embedding of javascript expressions
 
 // i'm a custom component
-export default function ColorPalette() {
-  const defaultHex = "aaaaaa";
-  const defaultPrompt = "my livingroom couch";
+export default function ColorPalette({color}) {
+  console.log({color})
+  const defaultHex = 'aaaaaa';
+  const defaultPrompt = 'my livingroom couch';
 
   // state management: useState is a hook that allows us to manage state
   // response holds the ai's reponse
@@ -27,7 +28,8 @@ export default function ColorPalette() {
   // asynchronous function
   const handleSubmit = async () => {
     try {
-      const colorsResponse = await getColors(hexText, describeText);
+      console.log({describeText})
+      const colorsResponse = await getColors(color.hex, describeText);
       // set the response directly (string)
       setResponse(colorsResponse);
       // add palettes
@@ -86,7 +88,7 @@ export default function ColorPalette() {
       <div className="flex">
         <input
           className="bg-gray-200 rounded focus:outline-none p-1"
-          value={describeText}
+          placeholder={describeText}
           onChange={(e) => setDescribeText(e.target.value)}
           type="text"
         />
