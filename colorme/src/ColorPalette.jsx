@@ -9,7 +9,8 @@ import { getColors } from './groqaiService';
 // it allows embedding of javascript expressions
 
 // i'm a custom component
-export default function ColorPalette() {
+export default function ColorPalette({color}) {
+  console.log({color})
   const defaultHex = 'aaaaaa';
   const defaultPrompt = 'my livingroom couch';
 
@@ -27,7 +28,8 @@ export default function ColorPalette() {
   // asynchronous function
   const handleSubmit = async () => {
     try {
-      const colorsResponse = await getColors(hexText, describeText);
+      console.log({describeText})
+      const colorsResponse = await getColors(color.hex, describeText);
       // set the response directly (string)
       setResponse(colorsResponse);
       // add palettes
@@ -77,7 +79,7 @@ const renderPalette = (palette, index) => (
       <label>
         Description:&nbsp; 
         <input
-          value={describeText}
+          placeholder={describeText}
           onChange={e => setDescribeText(e.target.value)}
           type="text"
         />

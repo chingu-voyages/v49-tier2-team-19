@@ -33,7 +33,7 @@ export default function App() {
       <HeaderBar />
       <div className="container">
         <ColorMe color={color} onChange={setColor} />
-        <ColorPalette />
+        <ColorPalette color={color} />
       </div>
       <FooterBar />
     </>
