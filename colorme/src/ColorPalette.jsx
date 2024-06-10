@@ -9,10 +9,10 @@ import { getColors } from "./groqaiService";
 // it allows embedding of javascript expressions
 
 // i'm a custom component
-export default function ColorPalette({color}) {
-  console.log({color})
-  const defaultHex = 'aaaaaa';
-  const defaultPrompt = 'my livingroom couch';
+export default function ColorPalette({ color }) {
+  console.log({ color });
+  const defaultHex = "aaaaaa";
+  const defaultPrompt = "my livingroom couch";
 
   // state management: useState is a hook that allows us to manage state
   // response holds the ai's reponse
@@ -28,7 +28,7 @@ export default function ColorPalette({color}) {
   // asynchronous function
   const handleSubmit = async () => {
     try {
-      console.log({describeText})
+      console.log({ describeText });
       const colorsResponse = await getColors(color.hex, describeText);
       // set the response directly (string)
       setResponse(colorsResponse);
@@ -45,30 +45,59 @@ export default function ColorPalette({color}) {
   const renderPalette = (palette, index) => (
     <div key={index} className="ms-2" style={{ marginBottom: "20px" }}>
       <h3 className="ms-2 mb-2">{`Palette ${index + 1}: ${palette.Name}`}</h3>
-      <div style={{ display: "flex", alignItems: "center" }}>
-        {palette.Colors.map((color, idx) => (
-          <div key={idx}>
-            <div
-              className="rounded"
-              style={{
-                width: "50px",
-                height: "50px",
-                backgroundColor: color["Hex Code"],
-                margin: "0 15px",
-              }}
-            ></div>
-            <div
-              style={{
-                width: "50px",
-                margin: "0 15px",
-              }}
-            >
-              <span className="text-sm text-center m-0 p-0" key={idx}>
-                {color.Name}
-              </span>
-            </div>
-          </div>
-        ))}
+      <div style={{ display: "flex" }}>
+        {palette.Colors.map((color, idx) => {
+          if (idx === 0) {
+            return (
+              <div key={idx} className="flex flex-col items-center">
+                <p className="ps-2">Your selection:</p>
+                <div
+                  className="rounded-full"
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    backgroundColor: color["Hex Code"],
+                    margin: "0 25px",
+                  }}
+                ></div>
+                <div
+                  style={{
+                    width: "50px",
+                    margin: "0 25px",
+                  }}
+                >
+                  <p className="text-sm text-center m-0 p-0" key={idx}>
+                    {color.Name}
+                  </p>
+                </div>
+              </div>
+            );
+          } else {
+            return (
+              <div key={idx}>
+                <div
+                  className="rounded-full"
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    backgroundColor: color["Hex Code"],
+                    margin: "0 25px",
+                  }}
+                ></div>
+                <div
+                  style={{
+                    width: "50px",
+                    margin: "0 25px",
+                  }}
+                >
+                  <p className="text-sm text-center m-0 p-0" key={idx}>
+                    {color.Name}
+                  </p>
+                </div>
+              </div>
+            );
+          }
+        })}
       </div>
       <textarea
         className="ms-2 bg-gray-200"
@@ -83,7 +112,7 @@ export default function ColorPalette({color}) {
 
   // it's jsx
   return (
-    <div className="flex flex-col items-center">
+    <div className="font-display flex flex-col items-center">
       <p className="mb-2">Show me 5 more colors, based on this one, for...</p>
       <div className="flex">
         <input
@@ -92,7 +121,10 @@ export default function ColorPalette({color}) {
           onChange={(e) => setDescribeText(e.target.value)}
           type="text"
         />
-        <button style={{ backgroundColor: "#D7305A" }} onClick={handleSubmit}>
+        <button
+          className="bg-rose-600 hover:bg-rose-900 text-white text-base rounded"
+          onClick={handleSubmit}
+        >
           Submit
         </button>
       </div>
