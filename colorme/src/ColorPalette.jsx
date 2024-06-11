@@ -9,10 +9,10 @@ import { getColors } from "./groqaiService";
 // it allows embedding of javascript expressions
 
 // i'm a custom component
-export default function ColorPalette({color}) {
-  console.log({color})
-  const defaultHex = 'aaaaaa';
-  const defaultPrompt = 'my livingroom couch';
+export default function ColorPalette({ color }) {
+  console.log({ color });
+  const defaultHex = "aaaaaa";
+  const defaultPrompt = "my livingroom couch";
 
   // state management: useState is a hook that allows us to manage state
   // response holds the ai's reponse
@@ -28,7 +28,7 @@ export default function ColorPalette({color}) {
   // asynchronous function
   const handleSubmit = async () => {
     try {
-      console.log({describeText})
+      console.log({ describeText });
       const colorsResponse = await getColors(color.hex, describeText);
       // set the response directly (string)
       setResponse(colorsResponse);
@@ -43,32 +43,47 @@ export default function ColorPalette({color}) {
   };
 
   const renderPalette = (palette, index) => (
-    <div key={index} className="ms-2" style={{ marginBottom: "20px" }}>
+    <div key={index} className="ms-2 mb-20">
       <h3 className="ms-2 mb-2">{`Palette ${index + 1}: ${palette.Name}`}</h3>
-      <div style={{ display: "flex", alignItems: "center" }}>
-        {palette.Colors.map((color, idx) => (
-          <div key={idx}>
-            <div
-              className="rounded"
-              style={{
-                width: "50px",
-                height: "50px",
-                backgroundColor: color["Hex Code"],
-                margin: "0 15px",
-              }}
-            ></div>
-            <div
-              style={{
-                width: "50px",
-                margin: "0 15px",
-              }}
-            >
-              <span className="text-sm text-center m-0 p-0" key={idx}>
-                {color.Name}
-              </span>
+      <div className="flex text-center">
+        <p className="mb-1 ms-2 md:text-base text-sm">Your selection:</p>
+        <div className="md:ms-5 ms-3 mb-1 self-end">
+          <p className="md:ms-3 ms-0 md:text-base text-sm">Our suggestions:</p>
+        </div>
+      </div>
+      <div className="flex">
+        {palette.Colors.map((color, idx) => {
+          return (
+            <div key={idx} className="flex flex-col items-center">
+              <div
+                className={
+                  idx === 0
+                    ? "rounded-full md:w-10 md:h-10 w-7 h-7 md:ms-0 ms-5"
+                    : idx === 1
+                    ? "rounded md:ms-10 md:w-10 md:h-10 ms-14 w-7 h-7"
+                    : "rounded md:ms-8 md:w-10 md:h-10 ms-2 w-7 h-7"
+                }
+                style={{
+                  backgroundColor: color["Hex Code"],
+                }}
+              ></div>
+              <div className="md:w-10 md:mx-6 w-5 mx-3">
+                <p
+                  className={
+                    idx === 0
+                      ? "md:ms-1 md:text-sm ms-2 text-xs"
+                      : idx === 1
+                      ? "md:ms-5 md:text-sm ms-6 text-xs"
+                      : "md:ms-5 md:text-sm ms-1 text-xs"
+                  }
+                  key={idx}
+                >
+                  {color.Name}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
       <textarea
         className="ms-2 bg-gray-200"
@@ -83,7 +98,7 @@ export default function ColorPalette({color}) {
 
   // it's jsx
   return (
-    <div className="flex flex-col items-center">
+    <div className="font-display flex flex-col items-center">
       <p className="mb-2">Show me 5 more colors, based on this one, for...</p>
       <div className="flex">
         <input
@@ -92,7 +107,10 @@ export default function ColorPalette({color}) {
           onChange={(e) => setDescribeText(e.target.value)}
           type="text"
         />
-        <button style={{ backgroundColor: "#D7305A" }} onClick={handleSubmit}>
+        <button
+          className="bg-rose-600 hover:bg-rose-900 text-white text-base rounded"
+          onClick={handleSubmit}
+        >
           Submit
         </button>
       </div>
