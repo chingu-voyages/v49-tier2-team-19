@@ -43,60 +43,46 @@ export default function ColorPalette({ color }) {
   };
 
   const renderPalette = (palette, index) => (
-    <div key={index} className="ms-2" style={{ marginBottom: "20px" }}>
+    <div key={index} className="ms-2 mb-20">
       <h3 className="ms-2 mb-2">{`Palette ${index + 1}: ${palette.Name}`}</h3>
-      <div style={{ display: "flex" }}>
+      <div className="flex text-center">
+        <p className="mb-1 ms-2 md:text-base text-sm">Your selection:</p>
+        <div className="md:ms-5 ms-3 mb-1 self-end">
+          <p className="md:ms-3 ms-0 md:text-base text-sm">Our suggestions:</p>
+        </div>
+      </div>
+      <div className="flex">
         {palette.Colors.map((color, idx) => {
-          if (idx === 0) {
-            return (
-              <div key={idx} className="flex flex-col items-center">
-                <p className="ps-2">Your selection:</p>
-                <div
-                  className="rounded-full"
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    backgroundColor: color["Hex Code"],
-                    margin: "0 25px",
-                  }}
-                ></div>
-                <div
-                  style={{
-                    width: "50px",
-                    margin: "0 25px",
-                  }}
+          return (
+            <div key={idx} className="flex flex-col items-center">
+              <div
+                className={
+                  idx === 0
+                    ? "rounded-full md:w-10 md:h-10 w-7 h-7 md:ms-0 ms-5"
+                    : idx === 1
+                    ? "rounded md:ms-10 md:w-10 md:h-10 ms-14 w-7 h-7"
+                    : "rounded md:ms-8 md:w-10 md:h-10 ms-2 w-7 h-7"
+                }
+                style={{
+                  backgroundColor: color["Hex Code"],
+                }}
+              ></div>
+              <div className="md:w-10 md:mx-6 w-5 mx-3">
+                <p
+                  className={
+                    idx === 0
+                      ? "md:ms-1 md:text-sm ms-2 text-xs"
+                      : idx === 1
+                      ? "md:ms-5 md:text-sm ms-6 text-xs"
+                      : "md:ms-5 md:text-sm ms-1 text-xs"
+                  }
+                  key={idx}
                 >
-                  <p className="text-sm text-center m-0 p-0" key={idx}>
-                    {color.Name}
-                  </p>
-                </div>
+                  {color.Name}
+                </p>
               </div>
-            );
-          } else {
-            return (
-              <div key={idx}>
-                <div
-                  className="rounded-full"
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    backgroundColor: color["Hex Code"],
-                    margin: "0 25px",
-                  }}
-                ></div>
-                <div
-                  style={{
-                    width: "50px",
-                    margin: "0 25px",
-                  }}
-                >
-                  <p className="text-sm text-center m-0 p-0" key={idx}>
-                    {color.Name}
-                  </p>
-                </div>
-              </div>
-            );
-          }
+            </div>
+          );
         })}
       </div>
       <textarea
