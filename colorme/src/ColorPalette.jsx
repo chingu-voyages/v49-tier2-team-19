@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getColors } from "./groqaiService";
+import { getColors } from "./service/groqaiService";
 // colorpalette is not taking any props from App, props
 // are data from parent to child component
 // but we should have that maybe? idk
@@ -17,8 +17,6 @@ export default function ColorPalette({ color }) {
   // state management: useState is a hook that allows us to manage state
   // response holds the ai's reponse
   const [response, setResponse] = useState("");
-  // hextext holds the input hex code
-  const [hexText, setHexText] = useState("");
   // describetext holds the phrase input by user
   const [describeText, setDescribeText] = useState(defaultPrompt);
   // add palettes
@@ -30,15 +28,13 @@ export default function ColorPalette({ color }) {
     try {
       console.log({ describeText });
       const colorsResponse = await getColors(color.hex, describeText);
-      // set the response directly (string)
-      setResponse(colorsResponse);
-      // add palettes
-      setPalettes(JSON.parse(colorsResponse));
-      // from the json from groq ai
+      if (colorsResponse.error) {
+        throw new Error(colorsResponse.error);
+      }
+      setPalettes(colorsResponse);
     } catch (error) {
       console.error("Error while fetching colors:", error.message);
-      // reset response for error
-      setResponse("");
+      setResponse(`Error: ${error.message}`);
     }
   };
 
