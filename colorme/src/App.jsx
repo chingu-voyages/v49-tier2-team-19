@@ -3,17 +3,9 @@ import { formatHsv, formatRgba } from "./utils/format/format";
 import { ColorMe } from "./components/ColorMe/ColorMe";
 import HeaderBar from "./components/HeaderBar";
 import FooterBar from "./components/FooterBar";
-import "./index.css"; // added by isabel may 25 24
+import "./index.css";
 import "./App.css";
 import ColorPalette from "./ColorPalette";
-
-// https://serpapi.com/blog/create-super-fast-ai-assistant-with-groq/
-// https://www.youtube.com/watch?v=hw_J53MZT4o
-
-// i could put default values here
-// i could have a custom submit handler here
-// and pass these to colorpalette and that would be 'props'
-// 'function components in react define ui elements'
 
 export default function App() {
   const [color, setColor] = useColor("rgb(86 30 203)");
@@ -29,13 +21,17 @@ export default function App() {
   console.log("HSV", formatHsv(color.hsv));
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <HeaderBar />
-      <div className="container">
-        <ColorMe color={color} onChange={setColor} />
-        <ColorPalette color={color} />
+      <div className="flex-1 flex flex-col md:flex-row">
+        <div className="flex-1 p-4">
+          <ColorMe color={color} onChange={setColor} />
+        </div>
+        <div className="flex-1 p-4">
+          <ColorPalette color={color} />
+        </div>
       </div>
       <FooterBar />
-    </>
+    </div>
   );
 }
