@@ -22,6 +22,8 @@ export default function ColorPalette({ color }) {
   // add palettes
   const [palettes, setPalettes] = useState(null);
   // palettes will come from json groq ai
+  const [errorMessage, setErrorMessage] = useState("");
+
 
   // asynchronous function
   const handleSubmit = async () => {
@@ -32,8 +34,10 @@ export default function ColorPalette({ color }) {
         throw new Error(colorsResponse.error);
       }
       setPalettes(colorsResponse);
+      setErrorMessage(""); // Clear any previous error message
     } catch (error) {
       console.error("Error while fetching colors:", error.message);
+      setErrorMessage("Failed to fetch color palettes after multiple attempts. Please try again later.");
       setResponse(`Error: ${error.message}`);
     }
   };
@@ -111,6 +115,9 @@ export default function ColorPalette({ color }) {
         </button>
       </div>
       <br />
+      {errorMessage && (
+        <p className="text-red-500 mb-4">{errorMessage}</p>
+      )}
       {palettes && Object.values(palettes).map(renderPalette)}
     </div>
   );
