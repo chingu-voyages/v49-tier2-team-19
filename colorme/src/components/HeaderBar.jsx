@@ -10,7 +10,6 @@ export default function HeaderBar() {
                 /> 
             </div>
             <div className="text-white text-right text-wrap text-sm p-4">find the best color for your <span className="font-bold">anything</span></div>
-            <div className="text-black font-bold text-sm bg-white p-1.5 mr-4 rounded-lg">ColorMe</div>
         </div>
     );
   }
