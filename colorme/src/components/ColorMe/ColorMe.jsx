@@ -20,7 +20,7 @@ export const ColorMe = memo(function ColorMe({color, onChange}) {
   return (
     <div >
       <div style={padding}>
-        <div className="relative w-72 h-72 rounded-lg overflow-hidden bg-white">
+        <div className="relative h-72 rounded-lg overflow-hidden bg-white">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-full h-full rounded-lg overflow-hidden">
               <Saturation width={288} height={288} color={color} onChange={onChange} />
@@ -38,8 +38,9 @@ export const ColorMe = memo(function ColorMe({color, onChange}) {
 
       <h1>Color: {formatRgba(color.rgb)}</h1>
       
-      <div className="w-24 h-24 rounded-full" style={{ backgroundColor: rgba(...colorArr) }}></div>
-
+      <div style={padding} className="flex justify-center">
+        <div className="w-24 h-24 rounded-full" style={{ backgroundColor: rgba(...colorArr) }}></div>
+      </div>
 
       <Fields color={color} onChange={onChange} />
     </div>
