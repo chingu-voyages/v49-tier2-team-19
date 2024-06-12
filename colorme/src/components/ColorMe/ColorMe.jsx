@@ -39,8 +39,8 @@ export const ColorMe = memo(function ColorMe({color, onChange}) {
 
       <h1>Color: {formatRgba(color.rgb)}</h1>
       
-      <div style={divStyle}>
-      </div>
+      <div className="w-24 h-24 rounded-lg" style={{ backgroundColor: rgba(...colorArr) }}></div>
+
 
       <Fields color={color} onChange={onChange} />
     </div>
