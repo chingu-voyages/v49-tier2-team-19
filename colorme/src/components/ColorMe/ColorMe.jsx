@@ -8,12 +8,18 @@ import Fields from './Fields';
 export const ColorMe = memo(function ColorMe({color, onChange}) {
   let colorArr = formatRgbaCSS(color.rgb)
 
-  const divStyle = {
+  // const divStyle = {
+  //   backgroundColor: rgba(...colorArr),
+  //   width: '100px',
+  //   height: '100px',
+  //   padding: '100px'
+  // }
+  const circleStyle = {
     backgroundColor: rgba(...colorArr),
-    width: '100px',
-    height: '100px',
-    padding: '100px'
-  }
+    width: '10vmin', // 10%
+    height: '10vmin', // 10%
+    padding: '10vmin' // 10%
+  };
 
   const padding = { padding: '0.5rem 0'}
 
@@ -39,7 +45,7 @@ export const ColorMe = memo(function ColorMe({color, onChange}) {
       <h1>Color: {formatRgba(color.rgb)}</h1>
       
       <div style={padding} className="flex justify-center">
-        <div className="w-24 h-24 rounded-full" style={{ backgroundColor: rgba(...colorArr) }}></div>
+        <div className="w-24 h-24 rounded-full" style={circleStyle}></div>
       </div>
 
       <Fields color={color} onChange={onChange} />
