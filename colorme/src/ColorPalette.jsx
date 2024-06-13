@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { getColors } from "./service/groqaiService";
+import Loading from "./components/Loading";
 // colorpalette is not taking any props from App, props
 // are data from parent to child component
 // but we should have that maybe? idk
@@ -23,18 +24,26 @@ export default function ColorPalette({ color }) {
   const [palettes, setPalettes] = useState(null);
   // palettes will come from json groq ai
 
+  //will toggle the spinner animation on or off
+  const [isLoading, setIsLoading] = useState(false)
+
   // asynchronous function
   const handleSubmit = async () => {
     try {
+      //toggle the loading animation
+      setIsLoading(true)
+
       console.log({ describeText });
       const colorsResponse = await getColors(color.hex, describeText);
       if (colorsResponse.error) {
         throw new Error(colorsResponse.error);
       }
       setPalettes(colorsResponse);
+      setIsLoading(false)
     } catch (error) {
       console.error("Error while fetching colors:", error.message);
       setResponse(`Error: ${error.message}`);
+      setIsLoading(false)
     }
   };
 
@@ -111,7 +120,12 @@ export default function ColorPalette({ color }) {
         </button>
       </div>
       <br />
-      {palettes && Object.values(palettes).map(renderPalette)}
+
+      {
+        isLoading ?
+        <Loading color={color.hex} /> :
+        palettes && Object.values(palettes).map(renderPalette)
+      }
     </div>
   );
 }
