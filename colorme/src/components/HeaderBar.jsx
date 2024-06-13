@@ -5,11 +5,11 @@ export default function HeaderBar() {
                 <img 
                 src="logo_colorme.png" 
                 alt="Logo Color Me" 
-                width="60" height="60"
+                width="90" height="90"
                 className="pl-2 pr-1"
                 /> 
             </div>
-            <div className="text-white text-right text-wrap text-sm p-4">find the best color for your <span className="font-bold">anything</span></div>
+            <div className="text-white text-right text-wrap text-lg p-4">find the best color for your <span className="font-bold">anything</span></div>
         </div>
     );
   }
