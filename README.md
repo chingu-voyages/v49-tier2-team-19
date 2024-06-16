@@ -1,7 +1,7 @@
 
-### Colorme Application
+# Colorme Application
 
-# Colorme is a color chooser application designed to help developers and designers easily choose and manage color schemes for their projects.
+## Colorme is a color chooser application designed to help developers and designers easily choose and manage color schemes for their projects.
 
 
 To run:
