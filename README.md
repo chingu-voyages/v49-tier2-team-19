@@ -1,19 +1,19 @@
-# voyage-tasks
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+### Colorme Application
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+# Colorme is a color chooser application designed to help developers and designers easily choose and manage color schemes for their projects.
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
 
-> Own it & Make it your Own!
+To run:
 
-# How to Setup your Developer Environment (edits welcome!)
+Requirements
+- Node.js (v14.x or higher)
+- npm (v6.x or higher)
+- Git
+
+Installation
+
+1. Clone the repository:
 
 Open your terminal and navigate to your local copy of the git repository. If you don't have the git repository cloned yet, please enter the following command in your terminal:
 
@@ -21,23 +21,23 @@ Open your terminal and navigate to your local copy of the git repository. If you
 
 Once the folder is cloned, follow the rest of the instructions below.
 
-- Copy the `.env.template` file to a new file that's just named `.env` in the `colorpicker` folder. 
+- Copy the `.env.template` file to a new file that's just named `.env` in the `colorme` folder. 
 
-- Add the `VITE_GROQ_API_KEY` to `colorpicker/.env` (ask teammates for the API key)
+- Add the `VITE_GROQ_API_KEY` to `colorme/.env` (ask teammates for the API key)
 
 Navigate to the colorpicker folder.
 ```
-cd colorpicker
+cd colorme
 ```
 
 Install the code library requirements.
 ```
-yarn
+npm install
 ```
 
 Run the app!
 ```
-yarn run dev
+npm run dev
 ```
 
 You should now see a message in your terminal like
@@ -48,30 +48,9 @@ You should now see a message in your terminal like
   ➜  Network: use --host to expose
   ➜  press h + enter to show help
 ```
-
-## Remaining questions for team to discuss in standup
-1. Do we want to use yarn or npm for package / library management? I'm not sure why we have both types of package manager files in our repository.
-
-## Team Documents
-
-You may find these helpful as you work together to organize your project.
-
-- [Team Project Ideas](./docs/team_project_ideas.md)
-- [Team Decision Log](./docs/team_decision_log.md)
-
-Meeting Agenda templates (located in the `/docs` directory in this repo):
-
-- Meeting - Voyage Kickoff --> ./docs/meeting-voyage_kickoff.docx
-- Meeting - App Vision & Feature Planning --> ./docs/meeting-vision_and_feature_planning.docx
-- Meeting - Sprint Retrospective, Review, and Planning --> ./docs/meeting-sprint_retrospective_review_and_planning.docx
-- Meeting - Sprint Open Topic Session --> ./docs/meeting-sprint_open_topic_session.docx
+Open your browser and navigate to `http://localhost:5173/` to use the application.
 
 ## Our Team
-
-Everyone on your team should add their name along with a link to their GitHub
-& optionally their LinkedIn profiles below. Do this in Sprint #1 to validate
-your repo access and to practice PR'ing with your team *before* you start
-coding!
 
 - Lianna Novitz #1: [GitHub](https://github.com/lnovitz) / [LinkedIn](https://linkedin.com/in/liannanovitz) 
 - Isabel Klint #2: [GitHub](https://github.com/isabelklint) / [LinkedIn](https://linkedin.com/in/isabel-klint)
