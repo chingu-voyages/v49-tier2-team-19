@@ -1,5 +1,5 @@
 {
-  "name": "colorpicker",
+  "name": "colorme",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,9 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "groq-sdk": "^0.4.0",
+    "package.json": "^0.0.0",
+    "polished": "^4.3.1",
     "react": "^18.2.0",
+    "react-color-palette": "^7.1.1",
     "react-dom": "^18.2.0",
-    "@rollup/rollup-linux-x64-gnu": "^4.9.2"
+    "react-spinners-css": "^2.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
@@ -25,6 +31,10 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
-    "vite": "^5.2.11"
-  }
+    "vite": "^5.2.12"
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "postcss.config.js",
+  "author": "",
+  "license": "ISC"
 }
